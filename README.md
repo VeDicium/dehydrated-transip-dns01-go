@@ -46,7 +46,7 @@ This script has the following dependencies:
 No official builds are supported as of now, but Golang makes it easy to compile an executable for your server / PC / whatever like this:
 
 ```
-$ env GOOS=target-OS GOARCH=target-architecture go build main.go
+$ env GOOS=target-OS GOARCH=target-architecture go build -o ./builds/[target-OS].[target-architecture] main.go
 ```
 
 [Click here for some details information](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04#step-4-%E2%80%94-building-executables-for-different-architectures)

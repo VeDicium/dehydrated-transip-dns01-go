@@ -32,7 +32,7 @@ HANDLER="$1"; shift
 if [[ "${HANDLER}" =~ ^(deploy_cert|deploy_ocsp)$ ]]; then
 
   # deploy_cert command
-  if [[ "${HANDLER}" = "deploy_cert" ]]; then
+  if [[ "${HANDLER}" == "deploy_cert" ]]; then
     # Add all variables
     DOMAIN="${1}"
     KEYFILE="${2}"
@@ -43,7 +43,7 @@ if [[ "${HANDLER}" =~ ^(deploy_cert|deploy_ocsp)$ ]]; then
   fi
 
   # deploy_ocsp command
-  if [[ "${HANDLER}" = "deploy_ocsp" ]]; then
+  if [[ "${HANDLER}" == "deploy_ocsp" ]]; then
     # Add all variables
     DOMAIN="${1}"
     OCSPFILE="${2}"
@@ -56,5 +56,10 @@ if [[ "${HANDLER}" =~ ^(deploy_cert|deploy_ocsp)$ ]]; then
 
 else
   # Run go when not deploy_cert or deploy_ocsp
+
+  # Using Go
   go run main.go "$HANDLER" "$@"
+
+  # Using built binary
+  # /full/path/to/executable "$HANDLER" "$@"
 fi

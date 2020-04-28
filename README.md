@@ -9,7 +9,7 @@ $ cd ~
 $ git clone https://github.com/lukas2511/dehydrated
 $ cd dehydrated
 $ mkdir hooks
-$ https://github.com/VeDicium/dehydrated-transip-dns01-go.git hooks/transip
+$ git clone https://github.com/VeDicium/dehydrated-transip-dns01-go.git hooks/transip
 ```
 
 ## Configuration

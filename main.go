@@ -60,8 +60,8 @@ func main() {
 			log.Fatal(err)
 		}
 
-		log.Println("Sleep for 30 seconds")
-		time.Sleep(30 * time.Second)
+		log.Println("Sleep for 5 minutes")
+		time.Sleep(300 * time.Second)
 
 		return
 	}
@@ -73,9 +73,6 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-
-		log.Println("Sleep for 30 seconds")
-		time.Sleep(30 * time.Second)
 
 		return
 	}

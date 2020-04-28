@@ -49,4 +49,12 @@ No official builds are supported as of now, but Golang makes it easy to compile 
 $ env GOOS=target-OS GOARCH=target-architecture go build -o ./builds/[target-OS].[target-architecture] main.go
 ```
 
+For example, for Linux amd64 (most servers):
+```
+$ env GOOS=linux GOARCH=amd64 go build -o ./builds/linux.amd64 main.go
+```
+
+I've added this built, because it's probably most used, in the [builds folder](vedicium/dehydrated-transip-dns01-go/builds/) already.
+
+
 [Click here for some details information](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04#step-4-%E2%80%94-building-executables-for-different-architectures)

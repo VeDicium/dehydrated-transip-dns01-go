@@ -79,6 +79,8 @@ func main() {
 
 		return
 	}
+
+	log.Printf("Handler '%s' not supported, but I'm not erroring :)\n", handler)
 }
 
 // Challenges

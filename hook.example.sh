@@ -24,5 +24,37 @@ export TRANSIP_ACCOUNT_NAME
 export TRANSIP_KEY_PATH
 export TEST_MODE
 
-# Run script (via go)
-go run main.go "$@"
+# Run command
+HANDLER="$1"; shift
+
+# Fetch deploy command, because Golang doesn't do anything with it
+# Use this for reload nginx for example
+if [[ "${HANDLER}" =~ ^(deploy_cert|deploy_ocsp)$ ]]; then
+
+  # deploy_cert command
+  if [[ "${HANDLER}" = "deploy_cert" ]]; then
+    # Add all variables
+    DOMAIN="${1}"
+    KEYFILE="${2}"
+    CERTFILE="${3}"
+    FULLCHAINFILE="${4}"
+    CHAINFILE="${5}"
+    TIMESTAMP="${6}"
+  fi
+
+  # deploy_ocsp command
+  if [[ "${HANDLER}" = "deploy_ocsp" ]]; then
+    # Add all variables
+    DOMAIN="${1}"
+    OCSPFILE="${2}"
+    TIMESTAMP="${3}"
+  fi
+
+  # Run this command, for both command
+  # Like reloading nginx
+  # systemctl reload nginx
+
+else
+  # Run go when not deploy_cert or deploy_ocsp
+  go run main.go "$HANDLER" "$@"
+fi

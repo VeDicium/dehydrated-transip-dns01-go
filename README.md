@@ -14,7 +14,7 @@ $ git clone https://github.com/VeDicium/dehydrated-transip-dns01-go.git hooks/tr
 
 ## Configuration
 
-You'll need to create an TransIP API keypair, which can be done [here](https://www.transip.nl/cp/account/api/). The key given has to be saved somewhere on your server, like `~/dehydrated/hooks/transip/awesome-key-pair.key`. We've to set them to the `hook.sh` (copy [hook.example.sh](vedicium/dehydrated-transip-dns01-go/hook.example.sh) to `hook.sh`), like this:
+You'll need to create an TransIP API keypair, which can be done [here](https://www.transip.nl/cp/account/api/). The key given has to be saved somewhere on your server, like `~/dehydrated/hooks/transip/awesome-key-pair.key`. We've to set them to the `hook.sh` (copy [hook.example.sh](/hook.example.sh) to `hook.sh`), like this:
 
 ```
 $ TRANSIP_ACCOUNT_NAME='transip-account-name'
@@ -54,7 +54,7 @@ For example, for Linux amd64 (most servers):
 $ env GOOS=linux GOARCH=amd64 go build -o ./builds/linux.amd64 main.go
 ```
 
-I've added this built, because it's probably most used, in the [builds folder](vedicium/dehydrated-transip-dns01-go/builds/) already.
+I've added this built, because it's probably most used, in the [builds folder](/builds/) already.
 
 
 [Click here for some details information](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04#step-4-%E2%80%94-building-executables-for-different-architectures)
